@@ -4,7 +4,7 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import * as dat from "lil-gui";
 import vertexShader from "./shaders/vertexShader";
 import fragmentShader from "./shaders/fragmentShader";
-import skyImage from "./textures/sky.jpg";
+// import skyImage from "./textures/sky.jpg";
 
 const gui = new dat.GUI({width:300});
 
@@ -25,12 +25,12 @@ const scene = new THREE.Scene();
 /**
  * Textures
  */
-const textureLoader = new THREE.TextureLoader();
-const skyTexture = textureLoader.load(skyImage);
-scene.background = skyTexture;
+// const textureLoader = new THREE.TextureLoader();
+// const skyTexture = textureLoader.load(skyImage);
+// scene.background = skyTexture;
 
 // Geometry
-const geometry = new THREE.PlaneGeometry(8, 8, 512, 512);
+const geometry = new THREE.PlaneGeometry(3.5, 3.5, 100, 100);
 
 //color
 const colorObject = {};
@@ -174,8 +174,8 @@ const animate = () => {
   material.uniforms.uTime.value = elapsedTime;
 
   //カメラを円周上に周回させる
-  camera.position.x = Math.sin(elapsedTime * 0.17) * 3.0;
-  camera.position.z = Math.cos(elapsedTime * 0.17) * 3.0;
+  camera.position.x = Math.sin(elapsedTime * 0.17) * 1.8;
+  camera.position.z = Math.cos(elapsedTime * 0.17) * 1.8;
 
   camera.lookAt(
     Math.cos(elapsedTime),
