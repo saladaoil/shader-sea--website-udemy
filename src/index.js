@@ -174,8 +174,8 @@ const animate = () => {
   material.uniforms.uTime.value = elapsedTime;
 
   //カメラを円周上に周回させる
-  camera.position.x = Math.sin(elapsedTime * 0.17) * 3;
-  camera.position.z = Math.cos(elapsedTime * 0.17) * 3;
+  camera.position.x = Math.sin(elapsedTime * 0.17) * 3.0;
+  camera.position.z = Math.cos(elapsedTime * 0.17) * 3.0;
 
   camera.lookAt(
     Math.cos(elapsedTime),
